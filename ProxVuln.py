@@ -33,9 +33,17 @@ def convert_and_create_vm(ova_path, vm_id):
     print(f"Descomprimiendo el archivo {ova_path}...")
     os.system(f"tar -xvf {ova_path}")
 
-    print(f"Convirtiendo el disco a un formato aceptado por Proxmox...")
-    os.system(f"qemu-img convert -O raw {vm_name}-disk1.vmdk {vm_name}.raw")
+    # Buscar y convertir el archivo .vmdk
+    vmdk_files = [f for f in os.listdir() if f.endswith('.vmdk')]
+    if not vmdk_files:
+        print("No se encontró ningún archivo .vmdk en la carpeta.")
+        return
 
+    vmdk_file = vmdk_files[0]  # Tomar el primer archivo .vmdk encontrado
+    print(f"Convirtiendo el disco {vmdk_file} a un formato aceptado por Proxmox...")
+    os.system(f"qemu-img convert -O raw {vmdk_file} {vm_name}.raw")
+
+    # Crear la máquina virtual en Proxmox
     print(f"Creando la máquina virtual en Proxmox (ID: {vm_id})...")
     os.system(f"qm create {vm_id} --name {vm_name} --memory 2048 --net0 virtio,bridge=vmbr0 --cores 2 --sockets 1")
 
