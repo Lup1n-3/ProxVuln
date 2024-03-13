@@ -1,3 +1,18 @@
+
 # ProxVuln
-Convertidor de .ova para Proxmox 
-este codigo en python3 convierte los .ova en un formato aceptado por proxmox y lo levanta automaticamente para que pueda usarse cuando quiera, aparte tiene la funcion de descargar .ova desde vulnhub o cualquier otra pagina (solo debe fijarse que el enlace termine en .ova)
+
+.ova converter for Proxmox this code in python3 converts the .ova into a format accepted by proxmox and automatically raises it so that it can be used whenever you want, it also has the function of downloading .ova from vulnhub or any other page (you just have to pay attention that the link ends in .ova)
+
+## Usage/Examples
+
+```
+git clone https://github.com/Lup1n-3/ProxVuln
+```
+using "python3/py" depends on the version, I recommend using python 3.x.x
+```
+python3 ProxVuln.py
+```
+## Authors
+
+- [@Lup1n-3](https://github.com/Lup1n-3)
+
