@@ -1,7 +1,7 @@
 
 # ProxVuln
 
-.ova converter for Proxmox this code in python3 converts the .ova into a format accepted by proxmox and automatically raises it so that it can be used whenever you want, it also has the function of downloading .ova from vulnhub or any other page (you just have to pay attention that the link ends in .ova)
+.ova and .vmdk converter for Proxmox this code in python3 converts the .ova and .vmdk into a format accepted by proxmox and automatically raises it so that it can be used whenever you want, it also has the function of downloading .ova from vulnhub or any other page (you just have to pay attention that the link ends in .ova and .vmdk)
 
 ## Usage/Examples
 
